@@ -25,7 +25,7 @@ The Policy is now assigned with the allowed values for Cost Centers as "Cost Cen
 
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --debug
 
-![GitHub Logo](/images/vmi_cli_debug.PNG)
+![GitHub Logo](/images/vm_cli_debug.PNG)
 
 The request above fails since the tags were missing in the request. 
 
