@@ -6,8 +6,8 @@ Using an Azure Policy Service Policy ensures that these rules are honored irresp
 The Json document (*VMTagsPolicy.json*) representing the Policy definition is available in this GitHub repository accompanying this article.
 The steps to define a Policy and assign it are documented here https://docs.microsoft.com/en-us/azure/azure-policy/create-manage-policy#implement-a-new-custom-policy and here https://docs.microsoft.com/en-us/azure/azure-policy/assign-policy-definition.
 
-![GitHub Logo](/images/PolicyDefinition.png = 250x)
-<img src="./images/PolicyDefinition.png" alt="drawing" width="200px"/>
+
+<img src="./images/PolicyDefinition.png" alt="drawing" height="500px"/>
 
 In the Policy rule defined above, if either of the Tags are not specified in the request, the Provisioning request gets denied. The tag values are also validated to ensure that they are in the list of allowed Cost Center and Service Name Lists.
 
