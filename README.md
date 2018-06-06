@@ -43,7 +43,7 @@ Selecting a wrong value for the Cost Center Code ('Cost Center 3' selected in th
 <img src="./images/ArmTemplate1.png" alt="drawing" height="500px"/>
 
 3) Using the Azure portal to create a VM will not succeed, since the wizard does not provide an option to specify tags. However, when  a user edits the tags in a VM that already exists, the Policy validation kicks in and ensures that any changes that violate the policy are disallowed.
-In the screen shot below, deleting the 'Cost' Center' tag and selecting 'save' errors out citing the Policy violation
+In the screen shot below, setting a value different from that in the policy definition or deleting the 'Cost' Center' tag, and selecting 'save' errors out citing the Policy violation.
 
 <img src="./images/PortalEditTags.PNG" width="900px"/>
 
@@ -55,5 +55,5 @@ Azure Storage now provides the option to associate a Vnet Service endpoint to it
 The Policy definition below implements this rule, whereby only requests to provision a Storage account that have a VNET Service endpoint configured would be permitted, else the action is set to 'deny' the request. See screenshot below for the Policy Definition. The Policy definition file, *StorageSecurityCompliance.json* is available in the GitHub Location accompanying this article
 
 
-<img src="./images/StorageSecurity.PNG" height="500px"/>
+<img src="./images/StorageSecurity.PNG" height="500px" border-color="black" border="3"/>
 
