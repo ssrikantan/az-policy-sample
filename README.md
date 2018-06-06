@@ -45,7 +45,7 @@ Selecting a wrong value for the Cost Center Code ('Cost Center 3' selected in th
 3) Using the Azure portal to create a VM will not succeed, since the wizard does not provide an option to specify tags. However, when  a user edits the tags in a VM that already exists, the Policy validation kicks in and ensures that any changes that violate the policy are disallowed.
 In the screen shot below, deleting the 'Cost' Center' tag and selecting 'save' errors out citing the Policy violation
 
-<img src="./images/PortalEditTags.PNG" height="500px"/>
+<img src="./images/PortalEditTags.PNG" width="500px"/>
 
 While in the Policy definition the rule action is set to 'Deny' when the validation fails, and the VM provisioning fails, setting the rule action to 'audit' could be used instead to ensure that the provisioning requests succeeds, but the violations are written to audit and surfaces in the compliance dashboard. An organization could take corrective action manually, and at their convenience.
 
