@@ -22,6 +22,7 @@ The Policy is now assigned with the allowed values for Cost Centers as "Cost Cen
 ## Validating this Policy by provisioning a VM using different options
 
 1) Using CLI
+
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --debug
 
 ![GitHub Logo](/images/vmi_cli_debug.PNG)
