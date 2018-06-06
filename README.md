@@ -11,14 +11,14 @@ The steps to define a Policy and assign it are documented here https://docs.micr
 
 In the Policy rule defined above, if either of the Tags are not specified in the request, the Provisioning request gets denied. The tag values are also validated to ensure that they are in the list of allowed Cost Center and Service Name Lists.
 
-![GitHub Logo](/images/PolicyParams.png =100x250)
+<img src="./images/PolicyParams.png" alt="drawing" height="500px"/>
 
 The tag values are parameterized, and allowed values for Cost Center and Service Names bound to a predetermined set of values in the JSON definition.
 In this example, the Policy is assigned to a specific Resource group in the current Azure Subscription, so that the Policy gets applied only to this scope.
 
 The Policy is now assigned with the allowed values for Cost Centers as "Cost Center 1" and "Cost Center 2". See screenshot below.
 
-![GitHub Logo](/images/policy_assignment.PNG)
+<img src="./images/policy_assignment.PNG" alt="drawing" height="500px"/>
 
 ## Validating this Policy by provisioning a VM using different options
 
@@ -40,12 +40,12 @@ az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS -
 The ARM template (*SimpleVmJson.json*) used here is uploaded to the GitHub Repository referred to in this article
 Selecting a wrong value for the Cost Center Code ('Cost Center 3' selected in the ARM Template is not from among the list of allowed values in the Policy Assignment created in the previous steps), fails the resource provisioning request. See screenshot below
 
-![GitHub Logo](/images/ArmTemplate1.png)
+<img src="./images/ArmTemplate1.png" alt="drawing" height="500px"/>
 
 3) Using the Azure portal to create a VM will not succeed, since the wizard does not provide an option to specify tags. However, when  a user edits the tags in a VM that already exists, the Policy validation kicks in and ensures that any changes that violate the policy are disallowed.
 In the screen shot below, deleting the 'Cost' Center' tag and selecting 'save' errors out citing the Policy violation
 
-![GitHub Logo](/images/PortalEditTags.PNG)
+<img src="./images/PortalEditTags.PNG" height="500px"/>
 
 While in the Policy definition the rule action is set to 'Deny' when the validation fails, and the VM provisioning fails, setting the rule action to 'audit' could be used instead to ensure that the provisioning requests succeeds, but the violations are written to audit and surfaces in the compliance dashboard. An organization could take corrective action manually, and at their convenience.
 
@@ -54,7 +54,6 @@ Azure Storage now provides the option to associate a Vnet Service endpoint to it
 
 The Policy definition below implements this rule, whereby only requests to provision a Storage account that have a VNET Service endpoint configured would be permitted, else the action is set to 'deny' the request. See screenshot below for the Policy Definition. The Policy definition file, *StorageSecurityCompliance.json* is available in the GitHub Location accompanying this article
 
-![GitHub Logo](/images/StorageSecurity.PNG)
 
-
+<img src="./images/StorageSecurity.PNG" height="500px"/>
 
