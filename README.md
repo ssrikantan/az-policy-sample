@@ -55,5 +55,5 @@ Azure Storage now provides the option to associate a Vnet Service endpoint to it
 The Policy definition below implements this rule, whereby only requests to provision a Storage account that have a VNET Service endpoint configured would be permitted, else the action is set to 'deny' the request. See screenshot below for the Policy Definition. The Policy definition file, *StorageSecurityCompliance.json* is available in the GitHub Location accompanying this article
 
 
-<img src="./images/StorageSecurity.PNG" height="500px" style="padding:1px;border:thin solid black;"/>
+<img src="./images/StorageSecurity.PNG" height="500px"/>
 
