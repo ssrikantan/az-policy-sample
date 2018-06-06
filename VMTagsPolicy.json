@@ -1,0 +1,74 @@
+{
+  "policyRule": {
+    "if": {
+      "allOf": [
+        {
+          "anyOf": [
+            {
+              "not": {
+                "field": "[concat('tags[', parameters('CostCentertagName'), ']')]",
+                "in": "[parameters('CostCenters')]"
+              }
+            },
+            {
+              "not": {
+                "field": "[concat('tags[', parameters('ServiceNametagName'), ']')]",
+                "in": "[parameters('ServiceNames')]"
+              }
+            }
+          ]
+        },
+        {
+          "field": "type",
+          "equals": "Microsoft.Compute/virtualMachines"
+        }
+      ]
+    },
+    "then": {
+      "effect": "deny"
+    }
+  },
+  "parameters": {
+    "CostCentertagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "CostCentertagName",
+        "description": "Name of the tag, such as costCenter"
+      }
+    },
+    "CostCenters": {
+      "type": "Array",
+      "metadata": {
+        "displayName": "Allowed Cost centers",
+        "description": "The list of Cost centers allowed"
+      },
+      "allowedValues": [
+        "Cost Center 1",
+        "Cost Center 2",
+        "Cost Center 5"
+      ]
+    },
+    "ServiceNametagName": {
+      "type": "String",
+      "metadata": {
+        "displayName": "ServiceNametagName",
+        "description": "Name of the tag, such as Service Name"
+      }
+    },
+    "ServiceNames": {
+      "type": "Array",
+      "metadata": {
+        "displayName": "ServiceNames",
+        "description": "The list of Services allowed"
+      },
+      "allowedValues": [
+        "Service 1",
+        "Service 2",
+        "Service 3"
+      ]
+    }
+  },
+  "metadata": {
+    "category": "ComputeCompliance"
+  }
+}
