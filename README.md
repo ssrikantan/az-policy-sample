@@ -19,9 +19,9 @@ The Policy is now assigned with the allowed values for Cost Centers as "Cost Cen
 
 ![GitHub Logo](/images/policy_assignment.PNG)
 
-Validating this Policy by provisioning a VM using different options
+## Validating this Policy by provisioning a VM using different options
 
-	1) Using CLI
+1) Using CLI
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --debug
 
 ![GitHub Logo](/images/vmi_cli_debug.PNG)
@@ -34,13 +34,13 @@ az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS -
 The request below includes all the mandatory tags and the allowed values as set in the Policy definition, hence it succeeds and the VM gets provisioned.
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --tags CostCenter="Cost Center 2" ServiceName="Service 1" --debug
 
-	2) Using an ARM Template
+2) Using an ARM Template
 The ARM template (*SimpleVmJson.json*) used here is uploaded to the GitHub Repository referred to in this article
 Selecting a wrong value for the Cost Center Code ('Cost Center 3' selected in the ARM Template is not from among the list of allowed values in the Policy Assignment created in the previous steps), fails the resource provisioning request. See screenshot below
 
-![GitHub Logo](/images/ArmTemplate.PNG)
+![GitHub Logo](/images/ArmTemplate.png)
 
-	3) Using the Azure portal to create a VM will not succeed, since the wizard does not provide an option to specify tags. However, when  a user edits the tags in a VM that already exists, the Policy validation kicks in and ensures that any changes that violate the policy are disallowed.
+3) Using the Azure portal to create a VM will not succeed, since the wizard does not provide an option to specify tags. However, when  a user edits the tags in a VM that already exists, the Policy validation kicks in and ensures that any changes that violate the policy are disallowed.
 In the screen shot below, deleting the 'Cost' Center' tag and selecting 'save' errors out citing the Policy violation
 
 ![GitHub Logo](/images/PortalEditTags.PNG)
