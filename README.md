@@ -31,9 +31,11 @@ az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS -
 The request above fails since the tags were missing in the request. 
 
 The request below fails since the values set for the tags did not conform to the allowed values specified in the Policy assignment defined in the previous steps
+
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --tags CostCenter="Cost Center 2" ServiceName="Service 1" --debug
 
 The request below includes all the mandatory tags and the allowed values as set in the Policy definition, hence it succeeds and the VM gets provisioned.
+
 az vm create  --resource-group azpolicyrg --name azpolicyvm1 --image UbuntuLTS --admin-username onevmadmin --admin-password Pass@word123 --tags CostCenter="Cost Center 2" ServiceName="Service 1" --debug
 
 2) Using an ARM Template
